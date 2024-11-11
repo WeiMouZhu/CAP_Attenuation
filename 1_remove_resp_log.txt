@@ -1,0 +1,5 @@
+--------------------------------------------------------------------------
+0 stations have no response file, listed as follows:
+
+0 stations have wrong response file, listed as follows:
+

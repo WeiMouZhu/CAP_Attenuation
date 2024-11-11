@@ -1,5 +1,5 @@
-# CAP_Attenuation
-Central Anatolian Plateau: Data Acquisition and Preprocessing for Seismic Attenuation Imaging
+# CVP_attenuation_Anatolia
+Cappadocia Volcanic Province: Data Acquisition and Preprocessing for Seismic Attenuation Imaging
 
 This is for seismic data acquiring and pre-processing procedure of MuRAT
 
@@ -27,10 +27,12 @@ This is for seismic data acquiring and pre-processing procedure of MuRAT
    ```
 
 ## Usage
-For a total of 7 steps
+This process consists of 8 steps in total, and is still undergoing improvements.
 
 ## Step-0: Acquiring the seismic event catalog
 `0_event_catlog_acquire.py`
+`0_KOERI_catlog.py`
+
 `01_events_plot.py`: visualizing the seismic event distribution
 
 ## Step-1: Mass downloading the metadata
@@ -45,8 +47,21 @@ For a total of 7 steps
 ## Step-4: Set Theoretical Arrivals and Prepare SAC Files for AI tools Picking
 `4_TauP_PS.py`
 
-## Step-5: Visualizing Check 
-`5_check_visualizing.ipynb`
+#PhaseNet#
 
-## Step-6: PhaseNet 
+`python phasenet/predict.py --model=model/190703-214543 --data_list=CAP_SAC/results/sac.csv --data_dir=CAP_SAC --format=sac --batch_size=1 --plot_figure --result_dir=CAP_SAC/results`
+
+## Step-5: Filter Picking Results 
+`5_filter.py`
+
+## Step-6: Change SAC headers
+`6_change_header.py`
+
+## Step-7: Picks Outlier
+`7_picks_outlier.ipynb`
+
+## Step-8: QC-Visualizing Check 
+`8_check_visualizing.ipynb`
+
+
 
